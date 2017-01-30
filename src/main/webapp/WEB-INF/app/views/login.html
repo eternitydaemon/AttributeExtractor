@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="login-page">
+		<div class="form">
+			<form class="login-form" ng-submit="login()">
+				<input type="text" placeholder="Username" ng-model = "loginDetail.uname"/>
+				<input type="password" placeholder="Password" ng-model="loginDetail.password"/>
+				
+				<input type="submit" value="Log In">
+				<p class="message"><a href="#/forgotPass">Forgot password</a></p>
+				<p class="message">Not registered? <a href="#/userReg">Create an account</a></p>
+			</form>
+		</div>
+	</div>
+</div>

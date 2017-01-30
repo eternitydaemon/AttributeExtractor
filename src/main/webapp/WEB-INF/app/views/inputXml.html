@@ -1,0 +1,43 @@
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">Provide Input XML(s)</h3>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-12">            
+                        <form ng-submit="addNew()">
+                            <table class="table table-bordered">
+                            <!-- <thead>
+                                        <tr>
+                                            <th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /></th>
+                                            <th></th>
+                                            <th></th>                                        
+                                        </tr>
+                                    </thead> -->                                                             
+                                <tbody>
+                                    <tr ng-repeat="inputXML in inputXMLs">
+                                    <td><p>Input XML {{$index+1}}</p></td>
+                                        <td>
+                                            <input type="checkbox" ng-model="inputXML.selected"/></td>
+                                            <td>
+                                                <input type = "file" file-model = "inputXML.myFile" required="required"/> </td> 
+                                                <td><button type="submit" ng-click = "uploadFile()" class="btn btn-success">Upload</button></td>
+                                                
+                                            </tr>                                       
+                                        </tbody>
+                                    </table>
+                                    <div>
+                                        <input ng-hide="!inputXMLs.length" type="button" class="btn btn-danger pull-right" ng-click="remove()" value="Remove">
+                                        <input type="submit" class="btn btn-primary addnew pull-right" value="Add New">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>            
+        <div class="row">
+            <div class="col-md-12">
+            <button type="button" class="btn pull-right" ng-show="nextPage" ng-click="navToNextPage()">{{nextPage}}</button>
+            </div>
+        </div>
+    </div>

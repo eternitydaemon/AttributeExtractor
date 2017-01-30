@@ -1,0 +1,55 @@
+<div class="container">
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="text-center">Provide Attribute(s)</h3>
+
+    </div>
+   <!--  <div>
+    </div> -->
+</div>
+                <div class="panel-body">                
+                    <div class="">
+                        <form ng-submit="addNew()">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /></th>
+                                        <th>Input XML</th>
+                                        <th>Attribute name</th>
+                                        <th>Result Column</th>
+                                        <th>Field validation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr ng-repeat="attribDet in attribDetails">
+                                        <td>
+                                            <input type="checkbox" ng-model="attribDet.selected"/></td>
+                                            <td>
+                                                <select name="xmlSelect" id="xmlSelect" ng-model="attribDet.fileName" ng-change="populateAttrib()" ng-options="data.id as data.value for data in $parent.xmlAttribData">
+                                                 </select>
+                                            </td>
+                                        <td>
+                                            <input type="text" class="form-control autocomplete" ng-model="attribDet.attribName" typeahead="attr for attr in $parent.attribName | filter:$viewValue">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" ng-model="attribDet.colName" required/></td>
+                                            <td>
+                                            <input type="text" class="form-control" ng-model="attribDet.dataValidation"/></td>                                       
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-group">
+                                <input type="button" class="btn btn-danger pull-right" ng-click="remove()" value="Remove">
+                                <input type="submit" class="btn btn-primary addnew pull-right" value="Add New">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    <div class="row">
+        <div class="col-md-12">
+        <button type="button" class="btn pull-right" ng-show="extract" ng-click="extractData()">{{extract}}</button>
+        <button type="button" class="btn pull-left" ng-show="extract" ng-click="navToPrevPage()">Prev Page</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="reg-page">
+	<div class="form">
+		<form ng-submit="registerUser()">
+			<input type="text" placeholder="Name" ng-model = "newUser.uname" required/>
+			<input type="password" placeholder="Password" ng-model="newUser.password" required/>
+			<input type="password" placeholder="Confirm Password" ng-model="newUser.confPassword" required/>
+			<input type="email" placeholder="Email Address" ng-model="newUser.email" required/>
+			<!-- <button ng-click="registerUser()">create</button> -->
+			<input type="submit" value="Sign Up">
+			<p class="message">Already registered? <a href="#/login">Sign In</a></p>
+		</form>
+	</div>
+</div>
